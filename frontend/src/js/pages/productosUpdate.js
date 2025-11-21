@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const preview = document.getElementById("previewActualizar");
   const removeBtn = document.getElementById("remove-preview-actualizar");
 
+  // 👉 Flag para saber si se eliminó la imagen
+  let imagenEliminada = false;
+
   // 👉 Listener permanente para el botón ×
   removeBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -19,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     removeBtn.style.display = "none";
     inputFile.value = ""; // limpiar input file
     inputFile.disabled = false; // volver a habilitar
+    imagenEliminada = true; // marcar que se eliminó la imagen actual
   });
 
   // 👉 Aplica manejarInputProductoActualizar a cada campo del formulario de actualización
@@ -59,11 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
         preview.style.display = "block";
         removeBtn.style.display = "block";
         inputFile.disabled = true; // deshabilitar input si ya hay imagen
+        imagenEliminada = false;   // al abrir, la imagen está presente
       } else {
         preview.src = "";
         preview.style.display = "none";
         removeBtn.style.display = "none";
         inputFile.disabled = false;
+        imagenEliminada = true;    // no hay imagen inicial
       }
 
       const offcanvas = bootstrap.Offcanvas.getOrCreateInstance("#offcanvasActualizarProducto");
@@ -107,25 +113,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const precio = parseFloat(precioRaw);
     const cantidad = parseInt(cantidadRaw, 10);
 
+    // 🚨 Validación extra: si eliminó la imagen y no subió otra
+    if (imagenEliminada && !imagenFile) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Debes subir una nueva imagen si eliminaste la anterior.',
+        icon: 'error',
+        timer: 2500,
+        showConfirmButton: false
+      });
+      return;
+    }
+
     // 3. Armar FormData
     const formData = new FormData();
-    
     formData.append("NombreProducto", capitalizar(nombre));
     formData.append("Descripcion", capitalizar(descripcion));
     formData.append("Precio", precio);
     formData.append("Cantidad", cantidad);
-    
-    formData.append("Imagen", imagenFile ?? new File([], ""));
 
-    //  Mostrar en consola todo el contenido del FormData
-for (let [key, value] of formData.entries()) {
-  if (value instanceof File) {
-    console.log(`${key}: File name = ${value.name}, size = ${value.size}, type = ${value.type}`);
-  } else {
-    console.log(`${key}: ${value}`);
-  }
-
-}
+    if (imagenFile) {
+      formData.append("Imagen", imagenFile);
+    }
 
     try {
       await actualizarProducto(productoId, formData);
@@ -148,7 +157,6 @@ for (let [key, value] of formData.entries()) {
         cells[1].textContent = capitalizar(descripcion);
         cells[2].textContent = precio;
         cells[3].textContent = cantidad;
-        // Si quieres mostrar imagen en la tabla:
         if (imagenFile) {
           const previewUrl = URL.createObjectURL(imagenFile);
           cells[4].querySelector("img").src = previewUrl;

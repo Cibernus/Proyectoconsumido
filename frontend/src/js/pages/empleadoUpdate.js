@@ -11,6 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
   formActualizar.querySelectorAll("input").forEach(input => {
     input.addEventListener("input", manejarInputt);
 
+    const inputs = formActualizar.querySelectorAll("input, select, textarea");
+    inputs.forEach(input => {
+      input.classList.remove("invalid");
+      const errorMessage = input.nextElementSibling;
+      if (errorMessage && errorMessage.classList.contains("error-message")) {
+        errorMessage.textContent = "";
+        errorMessage.style.visibility = "hidden";
+      }
+    });
+
   });
 
    

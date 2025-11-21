@@ -12,8 +12,9 @@ function inicializarEventos() {
 
   const inputs = formulario.querySelectorAll("input");
   inputs.forEach(input => {
-    input.addEventListener("input", manejarInput);
+    input.addEventListener("input", manejarInput); 
   });
+
 }
 
 // Función para capitalizar nombres y apellidos

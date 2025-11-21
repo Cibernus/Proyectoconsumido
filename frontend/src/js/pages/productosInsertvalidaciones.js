@@ -86,44 +86,70 @@ export function validarcantidad(cantidad) {
   const removeBtn = document.getElementById("remove-preview"); 
 
 
-    if (!archivo) {
-      input.classList.add('invalid');
-      errorMessage.textContent = "Debes seleccionar una imagen";
-      errorMessage.style.visibility = 'visible';
-       input.disabled =false;
+   if (!(archivo.type === "image/jpeg" || archivo.type === "image/png")) {
+  //  Caso 1: hay archivo pero el tipo es inválido
+  input.classList.add('invalid');
+  errorMessage.textContent = "Solo se permiten imágenes JPG o PNG";
+  errorMessage.style.visibility = 'visible';
 
-    } else if (!(archivo.type === "image/jpeg" || archivo.type === "image/png")) {
-      input.classList.add('invalid');
-      errorMessage.textContent = "Solo se permiten imágenes JPG o PNG";
-      errorMessage.style.visibility = 'visible';
-    } else if (archivo.size > 2 * 1024 * 1024) { // 2 MB
-      input.classList.add('invalid');
-      errorMessage.textContent = "La imagen no debe superar 2 MB";
-      errorMessage.style.visibility = 'visible';
-    } else {
-      input.classList.remove('invalid');
-      errorMessage.style.visibility = 'hidden';
+  preview.src = "";
+  preview.style.display = "none";
+  removeBtn.style.display = "none";
+  input.value = "";
+  input.disabled = false;
 
-     // Mostrar vista previa
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      preview.src = e.target.result;
-      preview.style.display = "block";
-      removeBtn.style.display = "block";
-       input.disabled = true; 
-       
-    };
-    reader.readAsDataURL(archivo);
+} else if (!archivo) {
+  // 🚨 Caso 2: no se seleccionó ningún archivo
+  input.classList.add('invalid');
+  errorMessage.textContent = "Debes seleccionar una imagen";
+  errorMessage.style.visibility = 'visible';
+  input.disabled = false;
 
-    // Evento para borrar la imagen
-    removeBtn.onclick = function() {
+} else if (archivo.size > 2 * 1024 * 1024) {
+  // 🚨 Caso 3: archivo demasiado grande
+  input.classList.add('invalid');
+  errorMessage.textContent = "La imagen no debe superar 2 MB";
+  errorMessage.style.visibility = 'visible';
+
+  preview.src = "";
+  preview.style.display = "none";
+  removeBtn.style.display = "none";
+  input.value = "";
+  input.disabled = false;
+
+} else {
+  // 🚨 Caso 4: archivo válido
+  input.classList.remove('invalid');
+  errorMessage.style.visibility = 'hidden';
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    preview.src = e.target.result;
+    preview.style.display = "block";
+    removeBtn.style.display = "block";
+    input.disabled = true;
+  };
+  reader.readAsDataURL(archivo);
+
+  removeBtn.onclick = function() {
+    preview.src = "";
+    preview.style.display = "none";
+    removeBtn.style.display = "none";
+    input.value = "";
+    input.disabled = false;
+  };
+
+  const formulario = input.closest("form");
+  if (formulario) {
+    formulario.addEventListener("reset", () => {
       preview.src = "";
       preview.style.display = "none";
       removeBtn.style.display = "none";
-      input.value = ""; // limpiar input file
       input.disabled = false;
-    };
-    }
+    });
   }
+}
 
 }
+
+ }

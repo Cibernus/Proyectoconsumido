@@ -12,6 +12,38 @@ function inicializarEventos() {
   inputs.forEach(input => {
     input.addEventListener("input", manejarInputProducto);
     input.addEventListener("change", manejarInputProducto);
+
+
+    const offcanvasEl = document.getElementById("offcanvasAgregarProducto");
+  if (offcanvasEl) {
+    offcanvasEl.addEventListener("hidden.bs.offcanvas", () => {
+      formulario.reset();
+
+       const inputs = formulario.querySelectorAll("input, select, textarea");
+    inputs.forEach(input => {
+      input.classList.remove("invalid");
+      const errorMessage = input.nextElementSibling;
+      if (errorMessage && errorMessage.classList.contains("error-message")) {
+        errorMessage.textContent = "";
+        errorMessage.style.visibility = "hidden";
+      }
+    });
+
+      const inputImagen = document.getElementById("imagen2");
+      const preview = document.getElementById("preview");
+      const removeBtn = document.getElementById("remove-preview");
+
+      if (inputImagen) {
+        inputImagen.value = "";
+        inputImagen.disabled = false;
+      }
+      if (preview && removeBtn) {
+        preview.src = "";
+        preview.style.display = "none";
+        removeBtn.style.display = "none";
+      }
+    });
+  }
   });
 
   const inputImagen = document.getElementById("imagen2");
@@ -122,8 +154,18 @@ async function manejarSubmitProducto(event) {
     );
     offcanvas.hide();
      await ConsultaProductos();
+
+     const submitBtn = formulario.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = false;
+
+
+
   } catch (error) {
     console.error("Error al enviar producto:", error);
     alert("Error al agregar producto: " + error.message);
   }
+
+  const submitBtn = formulario.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = false;
+
 }
