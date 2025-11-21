@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="../styles/pages/ventas.css">
+</head>
+
+<body>
+    <nav class="barra-lateral">
+        <header>
+            <div class="logo">
+                <img id="imagen" src="../assets/img/logo.jpg" alt="Logo">
+            </div>
+        </header>
+
+        <div class="menu-barra">
+            <div class="menu">
+                <ul class="enlaces-menu">
+                    <li class="enlace-nav">
+                        <a href="../views/dashboard.html">
+                            <i class='bx bx-home icon'></i>
+                            <span class="texto nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/nueva-venta.html">
+                            <i class='bx bx-cart-add icon'></i>
+                            <span class="texto nav-text">Nueva venta</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/ventas.html">
+                            <i class="bx bx-cart icon"></i>
+                            <span class="texto nav-text">Ventas</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/productos.html">
+                            <i class="bx bx-box icon"></i>
+                            <span class="texto nav-text">Productos</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/proveedores.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Proveedores</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/empleados.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Empleados</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/reportes-stock.html">
+                            <i class="bx bx-package icon"></i>
+                            <span class="texto nav-text">Reportes</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/usuarios.html">
+                            <i class="bx bx-group icon"></i>
+                            <span class="texto nav-text">Usuarios</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="contenido-inferior">
+                <li class="enlace-nav">
+                    <a href="/Prototipo_navegacional_Web/configuracion/configuracion.html">
+                        <i class="bx bx-cog icon"></i>
+                        <span class="texto nav-text">Configuración</span>
+                    </a>
+                </li>
+            </div> -->
+        </div>
+    </nav>
+
+    <header class="titulo-principal">
+        <h2>Gestión del Historial de Ventas</h2>
+        <section>
+
+            <!-- <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="searchInput" placeholder=" Buscar...">
+            </div> -->
+
+            <!-- MENU DESPLEGABLE DE LAS NOTIFICACIONES -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button">
+                    <i class='bx bx-bell'></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="notification-item" href="#">No hay notificaciones aun</a></li>
+                </ul>
+            </div>
+
+            <!-- MENU DESPLEGABLE DEL USUARIO -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle dropdown-toggle2" type="button">
+                    <i class='bx bx-user usuario'></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu2">
+                    <li><a class="dropdown-item" href="#">Abarrotes Reyes</a></li>
+                    <li><a class="dropdown-item"
+                            href="../views/configuracion.html">Configuración</a></li>
+                    <li><a class="dropdown-item"
+                            href="../views/login.html">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </header>
+
+    <main>
+        <div class="primer-apartado">
+
+            <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="busqueda" placeholder="Buscar..." aria-label="Buscar Ventas">
+            </div>
+            <div>
+                <a href="../views/nueva-venta.html">
+                    <button class="nuevo-producto">
+                        <i class="bx bx-plus"></i>Nueva venta</button>
+                </a>
+            </div>
+        </div>
+        <div class="tablas-informacion">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número de Venta</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Empleado</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>VEN-0001</td>
+                        <td>2024-10-01 14:30:00</td>
+                        <td>$150.00</td>
+                        <td>Juan Pérez</td>
+                        <td class="td-operaciones">
+                            <button class="btn-imprimir">Imprimir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VEN-0002</td>
+                        <td>2024-10-02 16:15:00</td>
+                        <td>$120.00</td>
+                        <td>Ana González</td>
+                        <td class="td-operaciones">
+                            <button class="btn-imprimir">Imprimir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VEN-0003</td>
+                        <td>2024-10-03 12:45:00</td>
+                        <td>$180.00</td>
+                        <td>Juan Pérez</td>
+                        <td class="td-operaciones">
+                            <button class="btn-imprimir">Imprimir</button>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Boing</td>
+                        <td>Jugo</td>
+                        <td>$14.00</td>
+                        <td>5</td>
+                        <td class="td-operaciones">
+                            <div class="btn-contenedor">
+                                <button class="btn-editar"><i class="bx bx-edit"></i></button>
+                                <button class="btn-eliminar"><i class="bx bx-trash"></i></button>                                 
+                            </div>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        function redirigirUsuario() {
+            var select = document.getElementById("cambiar_usuario");
+            var opcionSeleccionada = select.value;
+
+            // Redirige si seleccionan "Cerrar sesión"
+            if (opcionSeleccionada === "cerrar_sesion") {
+                window.location.href = "/landing/landing.html";
+            }
+        }
+    </script>
+
+    <script src="ventas.js"></script>
+</body>
+
+</html>

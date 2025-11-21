@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Stock</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/img/logo.jpg">
+    <link rel="stylesheet" href="../styles/pages/reportes-stock.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+</head>
+
+<body>
+
+    <nav class="barra-lateral">
+        <header>
+            <div class="logo">
+                <img id="imagen" src="../assets/img/logo.jpg" alt="Logo">
+            </div>
+        </header>
+
+        <div class="menu-barra">
+            <div class="menu">
+                <ul class="enlaces-menu">
+                    <li class="enlace-nav">
+                        <a href="../views/dashboard.html">
+                            <i class='bx bx-home icon'></i>
+                            <span class="texto nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/nueva-venta.html">
+                            <i class='bx bx-cart-add icon'></i>
+                            <span class="texto nav-text">Nueva venta</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/ventas.html">
+                            <i class="bx bx-cart icon"></i>
+                            <span class="texto nav-text">Ventas</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/productos.html">
+                            <i class="bx bx-box icon"></i>
+                            <span class="texto nav-text">Productos</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/proveedores.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Proveedores</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/empleados.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Empleados</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/reportes-stock.html">
+                            <i class="bx bx-package icon"></i>
+                            <span class="texto nav-text">Reportes</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/usuarios.html">
+                            <i class="bx bx-group icon"></i>
+                            <span class="texto nav-text">Usuarios</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="contenido-inferior">
+                <li class="enlace-nav">
+                    <a href="/Prototipo_navegacional_Web/configuracion/configuracion.html">
+                        <i class="bx bx-cog icon"></i>
+                        <span class="texto nav-text">Configuración</span>
+                    </a>
+                </li>
+            </div> -->
+        </div>
+    </nav>
+
+    <header class="titulo_de_la_pagina">
+        <h2>Reporte de Stock</h2> <!-- Reporte general de inventario -->
+        <section>
+            <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="searchInput" placeholder="Buscar...">
+            </div>
+
+            <!-- <i class='bx bx-bell'></i>
+            <i class='bx bx-user usuario'></i>
+            <select id="cambiar_usuario" onchange="redirigirUsuario()" required>
+                <option value="empresa">Abarrotes Reyes</option>
+                <option value="usuario">jose@gmail.com</option>
+                <option value="cerrar_sesion"> cerrar sesion</option>
+            </select> -->
+            <!-- MENU DESPLEGABLE DE LAS NOTIFICACIONES -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button">
+                    <i class='bx bx-bell'></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="notification-item" href="#">No hay notificaciones aun</a></li>
+                </ul>
+            </div>
+
+            <!-- MENU DESPLEGABLE DEL USUARIO -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle dropdown-toggle2" type="button">
+                    <i class='bx bx-user usuario'></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu2">
+                    <li><a class="dropdown-item" href="#">Abarrotes Reyes</a></li>
+                    <li><a class="dropdown-item"
+                            href="../views/configuracion.html">Configuración</a></li>
+                    <li><a class="dropdown-item"
+                            href="../views/login.html">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <main class="contenido">
+        <div class="primer_apartado">
+            <section>
+                <!-- AQUI VA LOS ENLACES DE LAS SECCIONES -->
+                <nav class="nav2">
+                    <ul>
+                        <li><a class="activo" href="../views/reportes-stock.html">Reporte General</a>
+                        </li>
+                        <li><a href="../views/reportes-entradas-salidas.html">Entradas y salidas</a></li>
+                        <li><a href="../views/reportes-inventario-ganancias.html">Valor de
+                                inventario</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section>
+                <button id="descargarExcel">
+                    <i class='bx bx-download'></i> Descargar
+                </button>
+                <div id="ordenar_tabla">
+                    <div class="select-selected">
+                        Ordenar por...
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="select-items">
+                        <div data-value="a-z">Producto(A-Z)</div>
+                        <div data-value="z-a">Producto(Z-A)</div>
+                        <div data-value="mayor_valor">Mayor Valor Total</div>
+                        <div data-value="menor_valor">Menor Valor Total</div>
+                        <div data-value="mayor_stock">Stock(Mayor a menor)</div>
+                        <div data-value="menor_stock">Stock(Menor a mayor)</div>
+                        <div data-value="mayor_rotacion">Rotacion(Mayor a Menor)</div>
+                        <div data-value="menor_rotacion">Rotacion(Menor a Mayor)</div>
+
+                    </div>
+            </section>
+
+        </div>
+        <div class="tabla-reporte_general_de_stock">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Stock Actual</th>
+                        <th>Ventas</th>
+                        <th>Valor Total</th>
+                        <th>Nivel de Rotación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+    </main>
+
+    <script src="../js/pages/reportes-stock.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+
+    <!--     <script>
+        function redirigirUsuario() {
+            var select = document.getElementById("cambiar_usuario");
+            var opcionSeleccionada = select.value;
+    
+            // Redirige si seleccionan "Cerrar sesión"
+            if (opcionSeleccionada === "cerrar_sesion") {
+                window.location.href = "/landing/landing.html";
+            }
+        }
+    </script> -->
+
+    <!-- <script src="reporte.stock.js"></script> -->
+
+</body>
+
+</html>

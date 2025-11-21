@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "sans-serif";
+}
+
+:root {
+    --color-fondo: #ffffff;
+    --color-barra-lateral: #4299FF;
+    /* Color de la barra lateral */
+    --color-primario: #FFFFFF;
+    --color-primario-claro: #000000;
+    --color-toggle: #DDDDDD;
+    --color-texto: #ffffff;
+    --color-texto-hover: #4299FF;
+    /* Color del texto al hacer hover */
+    --tran-03: all 0.2s ease;
+}
+
+#imagen {
+    width: 50px !important;
+    /* Ajusta el tamaño del logo según sea necesario */
+    height: auto !important;
+    margin: 10px 0 !important;
+    /* Espacio alrededor del logo */
+    display: block !important;
+    padding: 5px !important;
+    /* Un poco de padding para que no quede pegado */
+    border-radius: 10px !important;
+}
+
+body {
+    min-height: 100vh;
+    transition: var(--tran-03);
+    color: #000000;
+    background-color: var(--color-fondo);
+}
+
+.barra-lateral {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100% !important;
+    width: 250px !important;
+    padding: 20px 14px !important;
+    background: var(--color-barra-lateral) !important;
+    transition: var(--tran-03) !important;
+    z-index: 1050 !important;
+}
+
+.menu-barra {
+    display: flex !important;
+    flex-direction: column !important;
+    height: calc(100% - 55px) !important;
+    justify-content: space-between !important;
+}
+
+.enlaces-menu {
+    list-style: none !important;
+}
+
+.enlace-nav {
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    margin: 10px 0 !important;
+    /* Espaciado entre enlaces */
+}
+
+.barra-lateral .icon {
+    min-width: 60px !important;
+    font-size: 20px !important;
+}
+
+.barra-lateral .texto {
+    color: var(--color-texto) !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    transition: var(--tran-03) !important;
+}
+
+.barra-lateral li a {
+    list-style: none !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    color: var(--color-texto) !important;
+    transition: var(--tran-03) !important;
+    padding: 10px !important;
+    /* Añadir un padding para el espacio del borde */
+}
+
+.barra-lateral li a:hover {
+    background-color: var(--color-fondo) !important;
+    /* Fondo blanco al pasar el cursor */
+    color: var(--color-barra-lateral) !important;
+    /* Texto del color de la barra lateral */
+    border: 2px solid var(--color-barra-lateral) !important;
+    /* Borde blanco */
+}
+
+.barra-lateral li a:hover .icon {
+    color: var(--color-barra-lateral) !important;
+    /* Cambiar color del icono al pasar el cursor */
+}
+
+.barra-lateral li a:hover .texto {
+    color: var(--color-barra-lateral) !important;
+    /* Cambiar color del texto al pasar el cursor */
+}
+
+.barra-lateral .contenido-inferior {
+    margin-top: auto !important;
+    /* Empuja el contenido inferior hacia el final */
+}
+
+#cambiar_usuario {
+    border: none !important;
+    outline: none !important;
+    /* Elimina el contorno al enfocar osea como quien dice tiene dos bordes */
+}

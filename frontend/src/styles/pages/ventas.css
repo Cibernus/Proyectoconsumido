@@ -1,0 +1,288 @@
+/* Global (Documento) */
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8FAFC;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Layout Principal (Estructuras) */
+main {
+    margin-left: 250px;
+    padding: 1rem;
+    width: calc(100% - 250px);
+}
+
+.titulo-principal {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.titulo-principal i {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.usuario {
+    background-color: #F8FAFC;
+    border-radius: 50%;
+}
+
+.primer-apartado {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Componentes Internos */
+/* Busqueda */
+.busqueda {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.busqueda input {
+    height: 40px;
+    padding: 10 10px;
+    padding-left: 35px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    flex: 0 0 200px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 10px;
+    color: #727A87;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.busqueda input:focus {
+    border-color: #727A87;
+    outline: none;
+}
+
+.busqueda input::placeholder {
+    text-align: left;
+}
+
+/* Botones */
+button {
+    font-size: 12px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.nuevo-producto {
+    background-color: #4299FF;
+    color: #ffffff;
+    border: none;
+}
+
+.nuevo-producto i {
+    margin-right: 5px;
+}
+
+.td-operaciones {
+    text-align: center;
+}
+
+.btn-contenedor {
+    display: inline-flex;
+    /* justify-content: flex-end; */
+    gap: 5px;
+}
+
+.btn-imprimir {
+    padding: 5px 10px;
+    background-color: #4299FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-imprimir:hover {
+    background-color: #1c7ed6;
+}
+
+/* .btn-editar, .btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.btn-editar {
+    color: #2563eb;
+}
+
+.btn-eliminar {
+    color: #dc3545;
+}
+
+.btn-editar:hover, .btn-eliminar:hover {
+    opacity: 0.7;
+} */
+
+/* Tablas */
+.tablas-informacion {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+thead {
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: thin solid gainsboro;
+}
+
+.tablas-informacion td div {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    main {
+        margin-left: 100px;
+        width: calc(100% - 100px);
+    }
+}
+
+/*------------------------------------ ESTILOS DEL MENU DESPLEGABLE---------------------------------*/
+.dropdown {
+    position: relative;
+    /* PARA QUE TOMEN COMO REFERENCIA A ESTE*/
+    display: inline-block;
+    /* Hace QUE SE ALINE CON OTROS ELEMENTOS*/
+}
+
+.btn {
+    padding: 4px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.dropdown-toggle {
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.bx-bell {
+    font-size: 25px;
+}
+
+.bx-user {
+    font-size: 25px;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    /* Ocultar el menú por defecto */
+    position: absolute;
+    /* PARA QUE SE POSICIONE ABAJO DEL ELEMENTO ANTERIOR*/
+    top: 100%;
+    /* Lo posicionamos debajo del botón */
+    right: 0;
+    /* ESTE ES PA QUE EMPIEZE DESDE LA DERECHA*/
+    background-color: white;
+    white-space: nowrap;
+    /* ESTE ES PARA QUE NO SE SALTE DE LINEA EL TEXTO */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    list-style: none;
+    padding: 8px 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+
+/* ESTILOS PARA EL MENU DESPLEGABLE(AMBOS)*/
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 4px 16px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4299FF;
+    color: white;
+}
+
+.dropdown-menu li .notification-item:hover {
+    background-color: white;
+    color: #000000;
+}
+
+/* APARTE DE AGREGAR ESTAS LINEAS HACER ESTAS COSAS : EN SECTION BORRAR EL GAP
+   ADEMAS BORRAR TODO ESTILO DE .titulo_de_la_pagina section i -, ADEMAS NO GENERALIZAR LOS BOTONES ES DECIR
+   NO APLICAR ESTILOS AL ELEMENTO BOTON SINO MEJOR APLICAR ESTILOS OCUPANDO SU ID #descargarExcel  */

@@ -1,0 +1,290 @@
+h2 {
+    display: inline;
+}
+
+body {
+    background-color: #F8FAFC;
+    font-family: Arial, sans-serif;
+}
+
+.menu-lateral {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 200px;
+    background-color: #4299FF;
+    padding: 30px;
+}
+
+.titulo_de_la_pagina {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.busqueda {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.busqueda input {
+    height: 40px;
+    padding: 10 10px;
+    padding-left: 35px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    flex: 0 0 200px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 10px;
+    color: #727A87;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.busqueda input:focus {
+    border-color: #727A87;
+    outline: none;
+}
+
+.busqueda input::placeholder {
+    text-align: left;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+main {
+    margin-left: 250px;
+    /* AGREGAR 250 PARA QUE NO SE OCULTE MI MAIN */
+    width: calc(100% - 200);
+    padding: 1rem;
+}
+
+.tabla_valor_total_de_inventario {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+thead {
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: thin solid gainsboro;
+}
+
+.primer_apartado {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.usuario {
+    /* ESTILO SOLO A USUARIO */
+    background-color: #F8FAFC;
+    border-radius: 50%;
+}
+
+.nav2 ul {
+    display: flex;
+}
+
+.nav2 ul li {
+    list-style-type: none;
+}
+
+.nav2 ul li a {
+    text-decoration: none;
+    color: #000000;
+    margin-left: 30px;
+}
+
+.nav2 ul li a:hover {
+    text-decoration: none;
+    color: #2563EB;
+    margin-left: 30px;
+    border-bottom: medium solid;
+}
+
+/* #ordenar_tabla{
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #4299FF;
+    margin-left: 10px;
+    color: #ffffff;
+    border: thin solid #4299FF;
+    border-radius: 5px;
+    cursor: pointer; 
+    border: none;
+} */
+
+.nav2 ul li a.activo {
+    text-decoration: none;
+    color: #4299FF;
+    margin-left: 30px;
+    border-bottom: medium solid;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+/* Aseguramos que el contenedor de las opciones (.select-items) se muestre debajo del elemento select */
+#ordenar_tabla {
+    position: relative;
+    /* Este es el contenedor del dropdown, se mantiene así */
+    display: inline-block;
+    font-size: 14px;
+}
+
+.select-selected {
+    padding: 10px 20px;
+    background-color: #4299FF;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 2px;
+}
+
+.select-items {
+    display: none;
+    /* Está oculto por defecto */
+    position: absolute;
+    /* Posicionamos las opciones en relación al contenedor */
+    width: 100%;
+    /* Aseguramos que las opciones tengan el mismo ancho que el contenedor */
+    background-color: #4299FF;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.select-items div {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.select-items div:hover {
+    background-color: #3182CE;
+}
+
+.select-selected i {
+    margin-left: 10px;
+}
+
+/*------------------------------------ ESTILOS DEL MENU DESPLEGABLE---------------------------------*/
+.dropdown {
+    position: relative;
+    /* PARA QUE TOMEN COMO REFERENCIA A ESTE*/
+    display: inline-block;
+    /* Hace QUE SE ALINE CON OTROS ELEMENTOS*/
+}
+
+.btn {
+    padding: 4px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.dropdown-toggle {
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.bx-bell {
+    font-size: 25px;
+}
+
+.bx-user {
+    font-size: 25px;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    /* Ocultar el menú por defecto */
+    position: absolute;
+    /* PARA QUE SE POSICIONE ABAJO DEL ELEMENTO ANTERIOR*/
+    top: 100%;
+    /* Lo posicionamos debajo del botón */
+    right: 0;
+    /* ESTE ES PA QUE EMPIEZE DESDE LA DERECHA*/
+    background-color: white;
+    white-space: nowrap;
+    /* ESTE ES PARA QUE NO SE SALTE DE LINEA EL TEXTO */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    list-style: none;
+    padding: 8px 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+
+/* ESTILOS PARA EL MENU DESPLEGABLE(AMBOS)*/
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 4px 16px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4299FF;
+    color: white;
+}
+
+.dropdown-menu li .notification-item:hover {
+    background-color: white;
+    color: #000000;
+}
+
+/* APARTE DE AGREGAR ESTAS LINEAS HACER ESTAS COSAS : EN SECTION BORRAR EL GAP
+   ADEMAS BORRAR TODO ESTILO DE .titulo_de_la_pagina section i -, ADEMAS NO GENERALIZAR LOS BOTONES ES DECIR
+   NO APLICAR ESTILOS AL ELEMENTO BOTON SINO MEJOR APLICAR ESTILOS OCUPANDO SU ID #descargarExcel  */

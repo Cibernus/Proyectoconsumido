@@ -1,0 +1,334 @@
+main {
+    margin-left: 250px;
+    padding: 1rem;
+    width: calc(100% - 250px);
+}
+
+.titulo-principal {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.titulo-principal i {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.usuario {
+    background-color: #F8FAFC;
+    border-radius: 50%;
+}
+
+.primer-apartado {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Componentes Internos */
+/* Botones */
+button {
+    border-right: end;
+    font-size: 12px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.nueva-venta {
+    background-color: #4299FF;
+    color: #ffffff;
+    border: none;
+}
+
+.nueva-venta i {
+    margin-right: 5px;
+}
+
+.titulo {
+    margin-left: 16.5%;
+    background-color: #ffffff;
+    height: 70px;
+}
+
+.Buscador {
+    margin-left: 70%;
+    margin-top: -59px;
+}
+
+#usuario {
+    position: absolute;
+    margin-left: 18%;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -37px;
+}
+
+#campana {
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 5px;
+}
+
+#ti {
+    position: absolute;
+    margin-top: 10px;
+}
+
+.boton {
+    width: 81%;
+    height: 80px;
+    margin-left: 17%;
+    margin-top: 50px;
+    background-color: #ffffff;
+    border-radius: 7px;
+}
+
+#nuevo {
+    margin-left: 87%;
+    margin-top: 20px;
+    width: 10%;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #4299FF;
+    color: #ffffff;
+}
+
+.ticket {
+    height: 30%;
+    width: 30%;
+    margin-left: 40%;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#Tabla {
+    width: 100%;
+    border: 1px solid transparent;
+}
+
+th,
+td {
+    border: 1px solid transparent;
+    text-align: left;
+    background-color: transparent;
+    padding: 5px;
+}
+
+td[colspan="4"] {
+    text-align: center;
+    padding: 10px;
+}
+
+#Imprimir {
+    margin-left: 56%;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 10%;
+    background-color: #4299FF;
+    color: #FFFFFF;
+}
+
+#Cancelar {
+    position: absolute;
+    margin-left: -21%;
+    margin-top: 19px;
+    height: 40px;
+    width: 10%;
+    border-radius: 5px;
+    background-color: red;
+    color: #ffffff;
+}
+
+#confirmación {
+    margin-top: 15px;
+    margin-left: -20px;
+}
+
+input {
+    height: 30px;
+    width: 200px;
+    border-radius: 7px;
+}
+
+/* Tabla responsiva */
+.ticket {
+    overflow-x: auto;
+}
+
+#Tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid transparent;
+    text-align: left;
+    background-color: transparent;
+    padding: 5px;
+}
+
+/* Mejora la apariencia en pantallas pequeñas */
+@media (max-width: 600px) {
+    #Tabla {
+        display: block;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    th {
+        position: absolute;
+        top: -9999px;
+    }
+
+    td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        position: absolute;
+        /* Coloca la etiqueta antes del contenido */
+        left: 10px;
+        width: calc(50% - 20px);
+        white-space: nowrap;
+        /* Evita el quiebre de línea */
+        text-align: left;
+    }
+
+    /* Define etiquetas para cada celda */
+    td:nth-of-type(1):before {
+        content: "Producto";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Cantidad";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Precio Unitario";
+    }
+
+    td:nth-of-type(4):before {
+        content: "Total";
+    }
+}
+
+
+/*------------------------------------ ESTILOS DEL MENU DESPLEGABLE---------------------------------*/
+.dropdown {
+    position: relative;
+    /* PARA QUE TOMEN COMO REFERENCIA A ESTE*/
+    display: inline-block;
+    /* Hace QUE SE ALINE CON OTROS ELEMENTOS*/
+}
+
+.btn {
+    padding: 4px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.dropdown-toggle {
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.bx-bell {
+    font-size: 25px;
+}
+
+.bx-user {
+    font-size: 25px;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    /* Ocultar el menú por defecto */
+    position: absolute;
+    /* PARA QUE SE POSICIONE ABAJO DEL ELEMENTO ANTERIOR*/
+    top: 100%;
+    /* Lo posicionamos debajo del botón */
+    right: 0;
+    /* ESTE ES PA QUE EMPIEZE DESDE LA DERECHA*/
+    background-color: white;
+    white-space: nowrap;
+    /* ESTE ES PARA QUE NO SE SALTE DE LINEA EL TEXTO */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    list-style: none;
+    padding: 8px 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+
+/* ESTILOS PARA EL MENU DESPLEGABLE(AMBOS)*/
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 4px 16px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4299FF;
+    color: white;
+}
+
+.dropdown-menu li .notification-item:hover {
+    background-color: white;
+    color: #000000;
+}
+
+/* APARTE DE AGREGAR ESTAS LINEAS HACER ESTAS COSAS : EN SECTION BORRAR EL GAP
+   ADEMAS BORRAR TODO ESTILO DE .titulo_de_la_pagina section i -, ADEMAS NO GENERALIZAR LOS BOTONES ES DECIR
+   NO APLICAR ESTILOS AL ELEMENTO BOTON SINO MEJOR APLICAR ESTILOS OCUPANDO SU ID #descargarExcel  */

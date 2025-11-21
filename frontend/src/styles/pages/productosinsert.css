@@ -1,0 +1,16 @@
+
+
+.error-message {
+    color: red;
+    font-size: 12px;
+  }
+
+input:focus.invalid {
+    border: 2px solid red !important;
+  }
+
+  input.invalid{
+    border:2px solid red !important;
+  }
+
+ 

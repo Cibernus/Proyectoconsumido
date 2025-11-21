@@ -1,0 +1,281 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8fafc;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+main {
+    margin-left: 250px;
+    padding: 1rem;
+    width: calc(100% - 250px);
+}
+
+.titulo-principal {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.titulo-principal i {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.usuario {
+    background-color: #f8fafc;
+    border-radius: 50%;
+}
+
+.primer-apartado {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.busqueda {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.busqueda input {
+    height: 40px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    padding-left: 35px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    flex: 0 0 200px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 10px;
+    color: #727a87;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.busqueda input:focus {
+    border-color: #727a87;
+    outline: none;
+}
+
+.busqueda input::placeholder {
+    text-align: right;
+}
+
+button {
+    font-size: 12px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.consultar-empleado {
+    background-color: #4299FF;
+    color: #ffffff;
+    border: none;
+}
+
+.consultar-empleado i {
+    margin-right: 5px;
+    ;
+}
+
+/* Estilos para el contenedor del formulario */
+.contenedor-formulario {
+    max-width: 100%;
+    /* Ancho máximo del contenedor (ajústalo según sea necesario) */
+    min-height: 500px;
+    margin: 120px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el formulario */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Agrupación de campos del formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada */
+.form-group input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 100%;
+}
+
+.formulario input:focus {
+    border-color: #727a87;
+    outline: none;
+}
+
+/* Estilos para los botones */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    grid-column: span 2;
+}
+
+/* Estilos para el botón de cancelar */
+.btn-cancelar button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para el botón de agregar */
+.btn-agregar button {
+    background-color: #4299FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    cursor: pointer;
+    /* Cambiar cursor a puntero */
+}
+
+/* Efecto hover para botones */
+.btn-cancelar button:hover,
+.btn-agregar button:hover {
+    opacity: 0.9;
+}
+
+/*------------------------------------ ESTILOS DEL MENU DESPLEGABLE---------------------------------*/
+.dropdown {
+    position: relative;
+    /* PARA QUE TOMEN COMO REFERENCIA A ESTE*/
+    display: inline-block;
+    /* Hace QUE SE ALINE CON OTROS ELEMENTOS*/
+}
+
+.btn {
+    padding: 4px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.dropdown-toggle {
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.bx-bell {
+    font-size: 25px;
+}
+
+.bx-user {
+    font-size: 25px;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    /* Ocultar el menú por defecto */
+    position: absolute;
+    /* PARA QUE SE POSICIONE ABAJO DEL ELEMENTO ANTERIOR*/
+    top: 100%;
+    /* Lo posicionamos debajo del botón */
+    right: 0;
+    /* ESTE ES PA QUE EMPIEZE DESDE LA DERECHA*/
+    background-color: white;
+    white-space: nowrap;
+    /* ESTE ES PARA QUE NO SE SALTE DE LINEA EL TEXTO */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    list-style: none;
+    padding: 8px 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+
+/* ESTILOS PARA EL MENU DESPLEGABLE(AMBOS)*/
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 4px 16px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4299FF;
+    color: white;
+}
+
+.dropdown-menu li .notification-item:hover {
+    background-color: white;
+    color: #000000;
+}
+
+/* APARTE DE AGREGAR ESTAS LINEAS HACER ESTAS COSAS : EN SECTION BORRAR EL GAP
+   ADEMAS BORRAR TODO ESTILO DE .titulo_de_la_pagina section i -, ADEMAS NO GENERALIZAR LOS BOTONES ES DECIR
+   NO APLICAR ESTILOS AL ELEMENTO BOTON SINO MEJOR APLICAR ESTILOS OCUPANDO SU ID #descargarExcel  */

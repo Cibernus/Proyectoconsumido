@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Empleados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="../styles/pages/empleados.css">
+    <link rel="stylesheet" href="../styles/pages/empleadosinsert.css">
+   
+</head>
+
+<body>
+    <nav class="barra-lateral">
+        <header>
+            <div class="logo">
+                <img id="imagen" src="../assets/img/logo.jpg" alt="Logo">
+            </div>
+        </header>
+
+        <div class="menu-barra">
+            <div class="menu">
+                <ul class="enlaces-menu">
+                    <li class="enlace-nav">
+                        <a href="./dashboard.html">
+                            <i class='bx bx-home icon'></i>
+                            <span class="texto nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./nueva-venta.html">
+                            <i class='bx bx-cart-add icon'></i>
+                            <span class="texto nav-text">Nueva venta</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./ventas.html">
+                            <i class="bx bx-cart icon"></i>
+                            <span class="texto nav-text">Ventas</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./productos.html">
+                            <i class="bx bx-box icon"></i>
+                            <span class="texto nav-text">Productos</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./proveedores.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Proveedores</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./empleados.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Empleados</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./reportes-stock.html">
+                            <i class="bx bx-package icon"></i>
+                            <span class="texto nav-text">Reportes</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./usuarios.html">
+                            <i class="bx bx-group icon"></i>
+                            <span class="texto nav-text">Usuarios</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="contenido-inferior">
+                <li class="enlace-nav">
+                    <a href="/configuracion/configuracion.html">
+                        <i class="bx bx-cog icon"></i>
+                        <span class="texto nav-text">Configuración</span>
+                    </a>
+                </li>
+                
+            </div> -->
+        </div>
+    </nav>
+
+    <header class="titulo-principal">
+        <h2>Gestión de Empleados</h2>
+        <section>
+
+            <!-- <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="searchInput" placeholder=" Buscar...">
+            </div>
+               -->
+            <!-- MENU DESPLEGABLE DE LAS NOTIFICACIONES -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button">
+                    <i class='bx bx-bell'></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="notification-item" href="#">No hay notificaciones aun</a></li>
+                </ul>
+            </div>
+
+            <!-- MENU DESPLEGABLE DEL USUARIO -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle dropdown-toggle2" type="button">
+                    <i class='bx bx-user usuario'></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu2">
+                    <li><a class="dropdown-item" href="#">Abarrotes Reyes</a></li>
+                    <li><a class="dropdown-item" href="./configuracion.html">Configuración</a></li>
+                    <li><a class="dropdown-item" href="./login.html">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </header>
+
+    <main>
+        <!-- <div class="primer-apartado">
+            <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="busqueda2" placeholder="Buscar..." aria-label="Buscar Empleados">
+            </div>
+            <div>
+                <a href="../../empleados/agregar/agregar-empleados.html">
+                    <button class="nuevo-empleado">
+                        <i class="bx bx-plus"></i>Agregar</button>
+                </a>
+            </div>
+        </div> -->
+
+        <div class="primer-apartado">
+            <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="busqueda" placeholder="Buscar..." aria-label="Buscar Empleado">
+            </div>
+            <div>
+                <button class="nuevo-empleado" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasAgregarEmpleado" aria-controls="offcanvasAgregarEmpleado">
+                    <i class="bx bx-plus" id="agregar"></i>Agregar
+                </button>
+            </div>
+        </div>
+
+        <!-- Offcanvas para agregar empleado -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAgregarEmpleado"
+            aria-labelledby="offcanvasAgregarEmpleadoLabel" style="width: 400px;">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title fw-semibold" id="offcanvasAgregarEmpleadoLabel">Agregar Empleado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <form id="formAgregarEmpleado">
+                    <div class="mb-4">
+                        <label for="nombre" class="form-label fw-semibold text-dark mb-2"
+                            style="font-size: 14px;">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre"
+                            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+                            required>
+                            <span id="error-nombre" class="error-message"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="apellidoPaterno" class="form-label fw-semibold text-dark mb-2"
+                            style="font-size: 14px;">Apellido Paterno</label>
+                        <input type="text" class="form-control" id="apellidoPaterno" placeholder="Apellido Paterno"
+                            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+                            required>
+                            <span id="error-apellidoPaterno" class="error-message"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="apellidoMaterno" class="form-label fw-semibold text-dark mb-2"
+                            style="font-size: 14px;">Apellido Materno</label>
+                        <input type="text" class="form-control" id="apellidoMaterno" placeholder="Apellido Materno"
+                            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+                            required>
+                            <span id="error-apellidoMaterno" class="error-message"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="telefono" class="form-label fw-semibold text-dark mb-2"
+                            style="font-size: 14px;">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" placeholder="Teléfono"
+                            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+                            required>
+                            <span id="error-telefono" class="error-message"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="curp" class="form-label fw-semibold text-dark mb-2"
+                            style="font-size: 14px;">CURP</label>
+                        <input type="text" class="form-control" id="curp" placeholder="CURP"
+                            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+                            required>
+
+                            <span id="error-curp" class="error-message"></span>
+                            
+                    </div>
+
+                    <div class="d-flex gap-3 mt-5">
+                        <button type="button" class="btn btn-danger flex-fill text-center" data-bs-dismiss="offcanvas"
+                            style="padding: 14px; font-weight: 600; border-radius: 8px; font-size: 15px;">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary flex-fill text-center"
+                            style="padding: 14px; font-weight: 600; border-radius: 8px; font-size: 15px;">
+                            Agregar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+     <!-- Offcanvas para actualizar empleado -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasActualizarEmpleado"
+    aria-labelledby="offcanvasActualizarEmpleadoLabel" style="width: 400px;">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title fw-semibold" id="offcanvasActualizarEmpleadoLabel">Actualizar Empleado</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <form id="formActualizarEmpleado">
+      <div class="mb-4">
+        <label for="actualizarNombre" class="form-label fw-semibold text-dark mb-2"
+            style="font-size: 14px;">Nombre</label>
+        <input type="text" class="form-control" id="actualizarNombre" placeholder="Nombre"
+            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+            required>
+        <span id="error-actualizarNombre" class="error-message"></span>
+      </div>
+
+      <div class="mb-4">
+        <label for="actualizarApellidoPaterno" class="form-label fw-semibold text-dark mb-2"
+            style="font-size: 14px;">Apellido Paterno</label>
+        <input type="text" class="form-control" id="actualizarApellidoPaterno" placeholder="Apellido Paterno"
+            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+            required>
+        <span id="erroractualizarApellidoPaterno" class="error-message"></span>
+      </div>
+
+      <div class="mb-4">
+        <label for="actualizarApellidoMaterno" class="form-label fw-semibold text-dark mb-2"
+            style="font-size: 14px;">Apellido Materno</label>
+        <input type="text" class="form-control" id="actualizarApellidoMaterno" placeholder="Apellido Materno"
+            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+            required>
+        <span id="error-actualizarApellidoMaterno" class="error-message"></span>
+      </div>
+
+      <div class="mb-4">
+        <label for="actualizarTelefono" class="form-label fw-semibold text-dark mb-2"
+            style="font-size: 14px;">Teléfono</label>
+        <input type="tel" class="form-control" id="actualizarTelefono" placeholder="Teléfono"
+            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+            required>
+        <span id="error-actualizarTelefono" class="error-message"></span>
+      </div>
+
+      <div class="mb-4">
+        <label for="actualizarCurp" class="form-label fw-semibold text-dark mb-2"
+            style="font-size: 14px;">CURP</label>
+        <input type="text" class="form-control" id="actualizarCurp" placeholder="CURP"
+            style="border: 1px solid #e0e0e0; padding: 12px; font-size: 14px; border-radius: 6px;"
+            required>
+        <span id="error-actualizarCurp" class="error-message"></span>
+      </div>
+
+      <div class="d-flex gap-3 mt-5">
+         <button type="button" class="btn btn-danger flex-fill text-center" data-bs-dismiss="offcanvas"
+            style="padding: 14px; font-weight: 600; border-radius: 8px; font-size: 15px;">
+          Cancelar
+        </button>
+        <button type="submit" class="btn btn-primary flex-fill text-center"
+        style="padding: 14px; font-weight: 600; border-radius: 8px; font-size: 15px;">
+        Actualizar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+        <div class="tablas-informacion">
+            <table id="tablaEmpleados">
+                <thead>
+                    <tr data-id="EMPLE-933372">
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Teléfono</th>
+                        <th>CURP</th>
+                        <th>Operaciones</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr data-id="EMPLE-933372">
+                      
+                        <td class="td-operaciones">
+                            <div class="btn-contenedor">
+                                <button class="btn-editar" type="button"
+                                       data-bs-toggle="offcanvas"
+                                   data-bs-target="#offcanvasActualizarEmpleado"
+                                      aria-controls="offcanvasActualizarEmpleado">
+                                      <i class="bx bx-edit"></i> 
+                                          </button>
+                                <button class="btn-eliminar"><i class="bx bx-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                       
+                        <td class="td-operaciones">
+                            <div class="btn-contenedor">
+                                <button class="btn-editar" type="button"
+                                       data-bs-toggle="offcanvas"
+                                   data-bs-target="#offcanvasActualizarEmpleado"
+                                      aria-controls="offcanvasActualizarEmpleado">
+                                      <i class="bx bx-edit"></i> 
+                                          </button>
+                                <button class="btn-eliminar"><i class="bx bx-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="EMPLE-933372">
+                      
+                        <td class="td-operaciones">
+                            <div class="btn-contenedor">
+                                <button class="btn-editar" type="button"
+                                       data-bs-toggle="offcanvas"
+                                   data-bs-target="#offcanvasActualizarEmpleado"
+                                      aria-controls="offcanvasActualizarEmpleado">
+                                      <i class="bx bx-edit"></i> 
+                                          </button>
+                                <button class="btn-eliminar"><i class="bx bx-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                       
+                        <td class="td-operaciones">
+                            <div class="btn-contenedor">
+                                 <button class="btn-editar" type="button"
+                                       data-bs-toggle="offcanvas"
+                                   data-bs-target="#offcanvasActualizarEmpleado"
+                                      aria-controls="offcanvasActualizarEmpleado">
+                                      <i class="bx bx-edit"></i> 
+                                          </button>
+                                <button class="btn-eliminar"><i class="bx bx-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/pages/empleadosInsert.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script type="module" src="../js/pages/empleadosGet.js"></script>
+      <script type="module" src="../js/pages/empleadoUpdate.js"></script>
+        <script type="module" src="../js/pages/empleadosDelete.js"></script>
+        
+</body>
+
+</html>

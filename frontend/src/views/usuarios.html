@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="../styles/pages/usuarios.css">
+</head>
+
+<body>
+    <nav class="barra-lateral">
+        <header>
+            <div class="logo">
+                <img id="imagen" src="../assets/img/logo.jpg" alt="Logo">
+            </div>
+        </header>
+
+        <div class="menu-barra">
+            <div class="menu">
+                <ul class="enlaces-menu">
+                    <li class="enlace-nav">
+                        <a href="../views/dashboard.html">
+                            <i class='bx bx-home icon'></i>
+                            <span class="texto nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/nueva-venta.html">
+                            <i class='bx bx-cart-add icon'></i>
+                            <span class="texto nav-text">Nueva venta</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/ventas.html">
+                            <i class="bx bx-cart icon"></i>
+                            <span class="texto nav-text">Ventas</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/productos.html">
+                            <i class="bx bx-box icon"></i>
+                            <span class="texto nav-text">Productos</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/proveedores.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Proveedores</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/empleados.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Empleados</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/reportes-stock.html">
+                            <i class="bx bx-package icon"></i>
+                            <span class="texto nav-text">Reportes</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/usuarios.html">
+                            <i class="bx bx-group icon"></i>
+                            <span class="texto nav-text">Usuarios</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="contenido-inferior">
+                <li class="enlace-nav">
+                    <a href="/Prototipo_navegacional_Web/configuracion/configuracion.html">
+                        <i class="bx bx-cog icon"></i>
+                        <span class="texto nav-text">Configuración</span>
+                    </a>
+                </li>
+            </div> -->
+        </div>
+    </nav>
+
+    <header class="titulo-principal">
+        <h2>Gestión de Usuarios</h2>
+        <section>
+
+            <!--     <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="searchInput" placeholder=" Buscar...">
+            </div>
+               -->
+            <!-- MENU DESPLEGABLE DE LAS NOTIFICACIONES -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button">
+                    <i class='bx bx-bell'></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="notification-item" href="#">No hay notificaciones aun</a></li>
+                </ul>
+            </div>
+
+            <!-- MENU DESPLEGABLE DEL USUARIO -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle dropdown-toggle2" type="button">
+                    <i class='bx bx-user usuario'></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu2">
+                    <li><a class="dropdown-item" href="#">Abarrotes Reyes</a></li>
+                    <li><a class="dropdown-item" href="./configuracion.html">Configuración</a></li>
+                    <li><a class="dropdown-item" href="./login.html">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </header>
+
+    <main>
+        <!-- <div class="primer-apartado">
+            <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="searchInput" placeholder="Buscar..." aria-label="Buscar Empleados">
+            </div>
+            <div>
+                <a href="../agregar-usuarios/agregar-usuarios.html">
+                    <button class="nuevo-empleado">
+                        <i class="bx bx-plus"></i>Agregar</button>
+                </a>
+            </div>
+        </div> -->
+
+        <div class="primer-apartado">
+            <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="busqueda" placeholder="Buscar..." aria-label="Buscar Usuario">
+            </div>
+            <div>
+                <button class="nuevo-usuario" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasAgregarUsuario" aria-controls="offcanvasAgregarUsuario">
+                    <i class="bx bx-plus"></i>Agregar
+                </button>
+            </div>
+        </div>
+
+        <!-- Offcanvas para agregar usuario -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAgregarUsuario"
+            aria-labelledby="offcanvasAgregarUsuarioLabel" style="width: 400px;">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title fw-semibold" id="offcanvasAgregarUsuarioLabel">Agregar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <form id="formAgregarUsuario">
+
+                    <div class="mb-4">
+                        <label for="nombre" class="form-label fw-semibold text-dark mb-2">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="apellidoPaterno" class="form-label fw-semibold text-dark mb-2">Apellido
+                            Paterno</label>
+                        <input type="text" class="form-control" id="apellidoPaterno" placeholder="Apellido Paterno"
+                            required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="apellidoMaterno" class="form-label fw-semibold text-dark mb-2">Apellido
+                            Materno</label>
+                        <input type="text" class="form-control" id="apellidoMaterno" placeholder="Apellido Materno"
+                            required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="telefono" class="form-label fw-semibold text-dark mb-2">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" placeholder="Teléfono" required>
+                    </div>
+
+                    <!-- NUEVO -->
+                    <div class="mb-4">
+                        <label for="correo" class="form-label fw-semibold text-dark mb-2">Correo electrónico</label>
+                        <input type="email" class="form-control" id="correo" placeholder="Correo electrónico" required>
+                    </div>
+
+                    <!-- NUEVO -->
+                    <div class="mb-4">
+                        <label for="contrasena" class="form-label fw-semibold text-dark mb-2">Contraseña</label>
+                        <input type="password" class="form-control" id="contrasena" placeholder="Contraseña" required>
+                    </div>
+
+                    <!-- NUEVO -->
+                    <div class="mb-4">
+                        <label for="rol" class="form-label fw-semibold text-dark mb-2">Rol</label>
+                        <select class="form-control" id="rol" required>
+                            <option value="">Seleccionar rol</option>
+                            <option value="admin">Administrador</option>
+                            <option value="empleado">Empleado</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-5">
+                        <button type="button" class="btn btn-danger flex-fill text-center" data-bs-dismiss="offcanvas">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary flex-fill text-center">
+                            Agregar
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <div class="tablas-informacion">
+            <table id="tablaUsuarios">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Teléfono</th>
+                        <th>Correo electrónico</th>
+                        <th>Rol</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script src="../js/pages/usuarios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function redirigirUsuario() {
+            var select = document.getElementById("cambiar_usuario");
+            var opcionSeleccionada = select.value;
+
+            // Redirige si seleccionan "Cerrar sesión"
+            if (opcionSeleccionada === "cerrar_sesion") {
+                window.location.href = "/landing/landing.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

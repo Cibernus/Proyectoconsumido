@@ -1,0 +1,495 @@
+/* Global (Documento) */
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8FAFC;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Layout Principal (Estructuras) */
+main {
+    margin-left: 250px;
+    padding: 1rem;
+    width: calc(100% - 250px);
+}
+
+.titulo-principal {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.titulo-principal i {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.usuario {
+    background-color: #F8FAFC;
+    border-radius: 50%;
+}
+
+.primer-apartado {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Componentes Internos */
+/* Busqueda */
+.busqueda {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.busqueda input {
+    height: 40px;
+    padding: 10 10px;
+    padding-left: 35px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    flex: 0 0 200px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 10px;
+    color: #727A87;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.busqueda input:focus {
+    border-color: #727A87;
+    outline: none;
+}
+
+.busqueda input::placeholder {
+    text-align: left;
+}
+
+/* Botones */
+button {
+    font-size: 12px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.nuevo-producto {
+    background-color: #4299FF;
+    color: #ffffff;
+    border: none;
+}
+
+.nuevo-producto i {
+    margin-right: 5px;
+}
+
+.td-operaciones {
+    text-align: right;
+   
+}
+
+.btn-contenedor {
+    display: inline-flex;
+    /* justify-content: flex-end; */
+    gap: 5px;
+    
+    
+}
+
+.btn-editar,
+.btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+   
+}
+
+.btn-editar {
+    color: #4299FF;
+}
+
+.btn-eliminar {
+    color: #dc3545;
+}
+
+.btn-editar:hover,
+.btn-eliminar:hover {
+    opacity: 0.7;
+}
+
+/* Tablas */
+.tablas-informacion {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+thead {
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: thin solid gainsboro;
+}
+
+.tablas-informacion td div {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    main {
+        margin-left: 100px;
+        width: calc(100% - 100px);
+    }
+}
+
+#eliminar-btn {
+    margin-left: 41%;
+}
+
+#editado {
+    margin-left: 19%;
+
+}
+
+.btn-confirm {
+    background-color: #4299FF;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+}
+
+.title {
+    font-size: 25px;
+}
+
+/*------------------------------------ ESTILOS DEL MENU DESPLEGABLE---------------------------------*/
+.dropdown {
+    position: relative;
+    /* PARA QUE TOMEN COMO REFERENCIA A ESTE*/
+    display: inline-block;
+    /* Hace QUE SE ALINE CON OTROS ELEMENTOS*/
+}
+
+.btn {
+    padding: 4px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.dropdown-toggle {
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.bx-bell {
+    font-size: 25px;
+}
+
+.bx-user {
+    font-size: 25px;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    /* Ocultar el menú por defecto */
+    position: absolute;
+    /* PARA QUE SE POSICIONE ABAJO DEL ELEMENTO ANTERIOR*/
+    top: 100%;
+    /* Lo posicionamos debajo del botón */
+    right: 0;
+    /* ESTE ES PA QUE EMPIEZE DESDE LA DERECHA*/
+    background-color: white;
+    white-space: nowrap;
+    /* ESTE ES PARA QUE NO SE SALTE DE LINEA EL TEXTO */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    list-style: none;
+    padding: 8px 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+
+/* ESTILOS PARA EL MENU DESPLEGABLE(AMBOS)*/
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 4px 16px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4299FF;
+    color: white;
+}
+
+.dropdown-menu li .notification-item:hover {
+    background-color: white;
+    color: #000000;
+}
+
+/* APARTE DE AGREGAR ESTAS LINEAS HACER ESTAS COSAS : EN SECTION BORRAR EL GAP
+   ADEMAS BORRAR TODO ESTILO DE .titulo_de_la_pagina section i -, ADEMAS NO GENERALIZAR LOS BOTONES ES DECIR
+   NO APLICAR ESTILOS AL ELEMENTO BOTON SINO MEJOR APLICAR ESTILOS OCUPANDO SU ID #descargarExcel  */
+
+
+/* Estilos del Offcanvas Moderno */
+.offcanvas-end {
+    width: 400px !important;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 24px;
+}
+
+.offcanvas-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.offcanvas-body {
+    padding: 24px;
+}
+
+/* Estilos de los inputs */
+#formAgregarProducto .form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+#formAgregarProducto .form-control {
+    border: 1px solid #e0e0e0;
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: border-color 0.2s ease;
+}
+
+#formAgregarProducto .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+}
+
+/* Placeholder */
+#formAgregarProducto .form-control::placeholder {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* Espaciado */
+#formAgregarProducto .mb-4 {
+    margin-bottom: 20px !important;
+}
+
+/* Botones */
+#formAgregarProducto .btn {
+    padding: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    text-align: center !important;
+    display: block;
+}
+
+#formAgregarProducto .btn-primary {
+    background-color: #4299FF;
+}
+
+#formAgregarProducto .btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+#formAgregarProducto .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+#formAgregarProducto .btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+/* Bootstrap overrides */
+.barra-lateral ul,
+.barra-lateral .enlaces-menu {
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+    list-style: none !important;
+}
+
+.barra-lateral li,
+.barra-lateral .enlace-nav {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    list-style: none !important;
+}
+
+.barra-lateral li a,
+.barra-lateral .enlace-nav a {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.barra-lateral i[class^="bx"],
+.barra-lateral .icon {
+    font-family: 'boxicons' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    line-height: 1 !important;
+}
+
+.barra-lateral .texto,
+.barra-lateral .nav-text {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.barra-lateral {
+    z-index: 1040 !important;
+}
+
+.offcanvas-backdrop {
+    z-index: 1045 !important;
+}
+
+.offcanvas {
+    z-index: 1055 !important;
+}
+
+/* Estilo mejorado para input type="file" en Bootstrap */
+input[type="file"].form-control {
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1.5px solid #fff;
+}
+
+input[type="file"].form-control::file-selector-button {
+    background: #4299FF;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    margin-right: 12px;
+    cursor: pointer;
+    /* transition: .25s; */
+    font-weight: 600;
+}
+
+input[type="file"].form-control::file-selector-button:hover {
+    background: #0b5ed7;
+}
+
+.remove-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 28px;
+  height: 28px;
+  background: #dc3545;    
+  color: white;           
+  border: none;
+  border-radius: 50%;     
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* sombra elegante */
+
+  /* centrado perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+
+  /* 👇 sin transparencia ni desvanecimiento */
+  opacity: 1;
+  transition: background 0.3s ease;
+}
+.remove-btn:hover {
+  background: #a71d2a; /* rojo más oscuro al pasar el mouse */
+  opacity: 1;          /* 👈 mantener opacidad fija */
+}
+.remove-btn:active {
+  background: #a71d2a; /* mismo color al hacer clic */
+  opacity: 1;          /* 👈 sin desvanecimiento al tocar */
+}
+
+#preview {
+  background-color: transparent;
+}
+
+/* Estado desactivado */
+
+

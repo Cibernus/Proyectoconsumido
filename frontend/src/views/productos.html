@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="../styles/pages/productos.css">
+     <link rel="stylesheet" href="../styles/pages/productosinsert.css">
+</head>
+
+<body>
+    <nav class="barra-lateral">
+        <header>
+            <div class="logo">
+                <img id="imagen" src="../assets/img/logo.jpg" alt="Logo">
+            </div>
+        </header>
+
+        <div class="menu-barra">
+            <div class="menu">
+                <ul class="enlaces-menu">
+                    <li class="enlace-nav">
+                        <a href="../views/dashboard.html">
+                            <i class='bx bx-home icon'></i>
+                            <span class="texto nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/nueva-venta.html">
+                            <i class='bx bx-cart-add icon'></i>
+                            <span class="texto nav-text">Nueva venta</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/nueva-venta.html">
+                            <i class="bx bx-cart icon"></i>
+                            <span class="texto nav-text">Ventas</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/productos.html">
+                            <i class="bx bx-box icon"></i>
+                            <span class="texto nav-text">Productos</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/proveedores.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Proveedores</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/empleados.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Empleados</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/reportes-stock.html">
+                            <i class="bx bx-package icon"></i>
+                            <span class="texto nav-text">Reportes</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="../views/usuarios.html">
+                            <i class="bx bx-group icon"></i>
+                            <span class="texto nav-text">Usuarios</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="contenido-inferior">
+                <li class="enlace-nav">
+                    <a href="../../configuracion/configuracion.html">
+                        <i class="bx bx-cog icon"></i>
+                        <span class="texto nav-text">Configuración</span>
+                    </a>
+                </li>
+                
+            </div> -->
+        </div>
+    </nav>
+
+    <header class="titulo-principal">
+        <h2>Gestión de Productos</h2>
+        <section>
+
+            <!--  <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="searchInput" placeholder=" Buscar...">
+            </div> -->
+
+            <!-- MENU DESPLEGABLE DE LAS NOTIFICACIONES -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button">
+                    <i class='bx bx-bell'></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="notification-item" href="#">No hay notificaciones aun</a></li>
+                </ul>
+            </div>
+
+            <!-- MENU DESPLEGABLE DEL USUARIO -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle dropdown-toggle2" type="button">
+                    <i class='bx bx-user usuario'></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu2">
+                    <li><a class="dropdown-item" href="#">Abarrotes Reyes</a></li>
+                    <li><a class="dropdown-item" href="../views/configuracion.html">Configuración</a></li>
+                    <li><a class="dropdown-item" href="../views/login.html">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </header>
+
+    <main>
+        <!-- <div class="primer-apartado">
+            <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="busqueda3" placeholder="Buscar..." aria-label="Buscar Producto">
+            </div>
+            <div>
+                <a href="../../productos/agregar/agregar-productos.html">
+                    <button class="nuevo-producto">
+                        <i class="bx bx-plus"></i>Agregar</button>
+                </a>
+            </div>
+        </div> -->
+
+        <div class="primer-apartado">
+            <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="busqueda" placeholder="Buscar..." aria-label="Buscar Producto">
+            </div>
+            <div>
+                <button class="nuevo-producto" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasAgregarProducto" aria-controls="offcanvasAgregarProducto">
+                    <i class="bx bx-plus"></i>Agregar
+                </button>
+            </div>
+        </div>
+
+        <!-- Offcanvas para agregar producto -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAgregarProducto"
+            aria-labelledby="offcanvasAgregarProductoLabel" style="width: 400px;">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title fw-semibold" id="offcanvasAgregarProductoLabel">Agregar Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <form id="formAgregarProducto" enctype="multipart/form-data">
+
+                    <div class="mb-4">
+                        <label for="nombre" class="form-label fw-semibold text-dark mb-2">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                        <span id="error-nombre" class="error-message"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="descripcion" class="form-label fw-semibold text-dark mb-2">Descripción</label>
+                        <textarea class="form-control" id="descripcion" placeholder="Descripción" rows="3"
+                            required></textarea>
+                            <span id="error-decripcion" class="error-message"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="precio" class="form-label fw-semibold text-dark mb-2">Precio</label>
+                        <input type="number" step="0.01" class="form-control" id="precio" placeholder="Precio" required>
+                        <span id="error-precio" class="error-message"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="cantidad" class="form-label fw-semibold text-dark mb-2">Cantidad</label>
+                        <input type="number" class="form-control" id="cantidad" placeholder="Cantidad" required>
+                        <span id="error-cantidad" class="error-message"></span>
+                    </div>
+
+                    <!-- NUEVO -->
+                    <div class="mb-4">
+                        <label for="imagen2" class="form-label fw-semibold text-dark mb-2">Imagen del producto</label>
+                        <input type="file" class="form-control" id="imagen2" accept="image/*">
+                        <span id="error-imagen2" class="error-message"></span>
+                         
+                       <div id="preview-container" style="position: relative; display:inline-block; margin-top:10px;">
+                        <img id="preview" style="max-width:150px; display:none;" />
+                        <button id="remove-preview" type="button" class="remove-btn" style="display:none;">
+                           ×
+                        </button>
+                          </div>
+
+                    </div>
+
+                    <div class="d-flex gap-3 mt-5">
+                        <button type="button" class="btn btn-danger flex-fill text-center" data-bs-dismiss="offcanvas">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-primary flex-fill text-center">
+                            Agregar
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Offcanvas para actualizar producto -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasActualizarProducto"
+    aria-labelledby="offcanvasActualizarProductoLabel" style="width: 400px;">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title fw-semibold" id="offcanvasActualizarProductoLabel">Actualizar Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <form id="formActualizarProducto" enctype="multipart/form-data">
+
+            
+            <div class="mb-4">
+                <label for="nombreActualizar" class="form-label fw-semibold text-dark mb-2">Nombre</label>
+                <input type="text" class="form-control" id="nombreActualizar" placeholder="Nombre" required>
+                <span id="error-nombreActualizar" class="error-message"></span>
+            </div>
+
+            <div class="mb-4">
+                <label for="descripcionActualizar" class="form-label fw-semibold text-dark mb-2">Descripción</label>
+                <textarea class="form-control" id="descripcionActualizar" placeholder="Descripción" rows="3"
+                    required></textarea>
+                <span id="error-descripcionActualizar" class="error-message"></span>
+            </div>
+
+            <div class="mb-4">
+                <label for="precioActualizar" class="form-label fw-semibold text-dark mb-2">Precio</label>
+                <input type="number" step="0.01" class="form-control" id="precioActualizar" placeholder="Precio" required>
+                <span id="error-precioActualizar" class="error-message"></span>
+            </div>
+
+            <div class="mb-4">
+                <label for="cantidadActualizar" class="form-label fw-semibold text-dark mb-2">Cantidad</label>
+                <input type="number" class="form-control" id="cantidadActualizar" placeholder="Cantidad" required>
+                <span id="error-cantidadActualizar" class="error-message"></span>
+            </div>
+
+            <div class="mb-4">
+                <label for="imagenActualizar" class="form-label fw-semibold text-dark mb-2">Imagen del producto</label>
+                <input type="file" class="form-control" id="imagenActualizar" accept="image/*">
+                <span id="error-imagenActualizar" class="error-message"></span>
+
+                <div id="preview-container-actualizar" style="position: relative; display:inline-block; margin-top:10px;">
+                    <img id="previewActualizar" style="max-width:150px; display:none;" />
+                    <button id="remove-preview-actualizar" type="button" class="remove-btn" style="display:none;">
+                        ×
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex gap-3 mt-5">
+                <button type="button" class="btn btn-danger flex-fill text-center" data-bs-dismiss="offcanvas">
+                    Cancelar
+                </button>
+                <button type="submit" class="btn btn-primary flex-fill text-center">
+                    Actualizar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+        <div class="tablas-informacion">
+            <table id="tablaproductos">
+                <thead>
+                    <tr  data-id="EMPLE-933372">
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                         <th>Imagen</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-id="EMPLE-933372">
+                      
+                        <td class="td-operaciones">
+                            <div class="btn-contenedor">
+                                 <button class="btn-editar" type="button"
+                                       data-bs-toggle="offcanvas"
+                                   data-bs-target="#offcanvasActualizarProducto"
+                                      aria-controls="offcanvasActualizarProducto">
+                                      <i class="bx bx-edit"></i> 
+                                          </button>
+                                <button class="btn-eliminar"><i class="bx bx-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="EMPLE-933372">
+                        
+                        <td class="td-operaciones">
+                            <div class="btn-contenedor">
+                               <button class="btn-editar" type="button"
+                                       data-bs-toggle="offcanvas"
+                                   data-bs-target="#offcanvasActualizarProducto"
+                                      aria-controls="offcanvasActualizarProducto">
+                                      <i class="bx bx-edit"></i> 
+                                          </button>
+                                <button class="btn-eliminar"><i class="bx bx-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="EMPLE-933372">
+                      
+                        <td class="td-operaciones">
+                            <div class="btn-contenedor">
+                               <button class="btn-editar" type="button"
+                                       data-bs-toggle="offcanvas"
+                                   data-bs-target="#offcanvasActualizarProducto"
+                                      aria-controls="offcanvasActualizarProducto">
+                                      <i class="bx bx-edit"></i> 
+                                          </button>
+                                <button class="btn-eliminar"><i class="bx bx-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="EMPLE-933372">
+                        
+                        <td class="td-operaciones">
+                            <div class="btn-contenedor">
+                               <button class="btn-editar" type="button"
+                                       data-bs-toggle="offcanvas"
+                                   data-bs-target="#offcanvasActualizarProducto"
+                                      aria-controls="offcanvasActualizarProducto">
+                                      <i class="bx bx-edit"></i> 
+                                          </button>
+                                <button class="btn-eliminar"><i class="bx bx-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script type="module" src="../js/pages/productosGet.js"></script>
+    <script src="../js/pages/productosInsert.js" type="module"></script>
+      <script src="../js/pages/productosUpdate.js" type="module"></script>
+       <script src="../js/pages/productosDelete.js" type="module"></script>
+
+
+
+</body>
+
+</html>

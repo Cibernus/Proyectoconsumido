@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles/pages/dashboard.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/menu.css">
+</head>
+
+<body>
+
+    <nav class="barra-lateral">
+        <header>
+            <div class="logo">
+                <img id="imagen" src="../assets/img/logo.jpg" alt="Logo">
+            </div>
+        </header>
+
+        <div class="menu-barra">
+            <div class="menu">
+                <ul class="enlaces-menu">
+                    <li class="enlace-nav">
+                        <a href="./dashboard.html">
+                            <i class='bx bx-home icon'></i>
+                            <span class="texto nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./nueva-venta.html">
+                            <i class='bx bx-cart-add icon'></i>
+                            <span class="texto nav-text">Nueva venta</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./ventas.html">
+                            <i class="bx bx-cart icon"></i>
+                            <span class="texto nav-text">Ventas</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./productos.html">
+                            <i class="bx bx-box icon"></i>
+                            <span class="texto nav-text">Productos</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./proveedores.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Proveedores</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./empleados.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="texto nav-text">Empleados</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./reportes-stock.html">
+                            <i class="bx bx-package icon"></i>
+                            <span class="texto nav-text">Reportes</span>
+                        </a>
+                    </li>
+                    <li class="enlace-nav">
+                        <a href="./usuarios.html">
+                            <i class="bx bx-group icon"></i>
+                            <span class="texto nav-text">Usuarios</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="contenido-inferior">
+                <li class="enlace-nav">
+                    <a href="/Prototipo_navegacional_Web/configuracion/configuracion.html">
+                        <i class="bx bx-cog icon"></i>
+                        <span class="texto nav-text">Configuración</span>
+                    </a>
+                </li>
+            </div> -->
+        </div>
+    </nav>
+
+    <header class="titulo_de_la_pagina">
+        <h2>Dashboard</h2>
+        <section>
+
+            <div class="busqueda">
+                <i class="bx bx-search icono-busqueda"></i>
+                <input type="search" id="searchInput" placeholder=" Buscar...">
+            </div>
+
+            <!-- MENU DESPLEGABLE DE LAS NOTIFICACIONES -->
+            <div class="dropdown">
+                <button class="btn btn-light" type="button">
+                    <i class='bx bx-bell'></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="notification-item" href="#">No hay notificaciones aun</a></li>
+                </ul>
+            </div>
+
+            <!-- MENU DESPLEGABLE DEL USUARIO -->
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle2" type="button">
+                    <i class='bx bx-user usuario'></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu2">
+                    <li><a class="dropdown-item" href="#">Abarrotes Reyes</a></li>
+                    <li><a class="dropdown-item" href="../views/configuracion.html">Configuración</a></li>
+                    <li><a class="dropdown-item" href="../views/login.html">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </header>
+
+    <main>
+        <!-- CONTENEDOR QUE ENVUELVE TODO -->
+        <div class="container-fluid px-4">
+            <!-- PRIMERA FILA LLEVARA CUATRO TARJETAS -->
+            <div class="row g-3 mb-4">
+                <!-- PRIMERA TARJETA -->
+                <div class="col-md-3">
+                    <div class="card dashboard-card">
+                        <div class="card-header">
+                            <h6 class="card-title mb-0">Ventas del día</h6>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-text">$1,500.00</h4>
+                            <small class="text-success"><i class="bx bx-up-arrow-alt"></i> 11.02%</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- SEGUNDA TARJETA -->
+                <div class="col-md-3">
+                    <div class="card dashboard-card">
+                        <div class="card-header">
+                            <h6 class="card-title mb-0">Stock Bajo</h6>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-text">15 Productos</h4>
+                            <small class="text-danger"><i class="bx bx-down-arrow-alt"></i> 8.50%</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- TERCERA TARJETA -->
+                <div class="col-md-3">
+                    <div class="card dashboard-card">
+                        <div class="card-header">
+                            <h6 class="card-title mb-0">Nuevos Proveedores</h6>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-text">1 Nuevo</h4>
+                            <small class="text-success"><i class="bx bx-up-arrow-alt"></i> 5.00%</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- CUARTA TARJETA -->
+                <div class="col-md-3">
+                    <div class="card dashboard-card">
+                        <div class="card-header">
+                            <h6 class="card-title mb-0">Empleados Activos</h6>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-text">1 Empleado</h4>
+                            <small class="text-success"><i class="bx bx-up-arrow-alt"></i> 100.00%</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEGUNDA FILA LLEVARA DOS TARJETAS-->
+            <div class="row g-3">
+                <!-- PRIMERA GRAFICA -->
+                <div class="col-md-6">
+                    <div class="card" style="height: 50vh;">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Ventas Diarias</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="chart-container" style="position: relative; height: 100%;">
+                                <canvas id="migrafica1" style="width: 100%; height: 100%;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SEGUNDA GRAFICA -->
+                <div class="col-md-6">
+                    <div class="card" style="height: 50vh;">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Porcentaje de Ventas por Producto</h5>
+                        </div>
+                        <!-- CONTENEDOR PARA LA GRAFICA Y LA LISTA-->
+                        <div class="card-body d-flex"
+                            style="height: calc(100% - 56px); flex-direction: row; justify-content: center; align-items: center;">
+                            <!-- Contenedor de la grafica -->
+                            <div class="chart-container"
+                                style="flex: 1; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                                <canvas id="migrafica2" style="max-width: 100%; max-height: 100%;"></canvas>
+                            </div>
+
+                            <!-- Contenedor de la lista-->
+                            <div class="list-container"
+                                style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px;">
+                                <ul class="list-unstyled" style="margin-bottom: 0; padding: 0; text-align: center;">
+                                    <li>Arroz: 30.0%</li>
+                                    <li>Aceite: 25.0%</li>
+                                    <li>Azúcar: 20.0%</li>
+                                    <li>Harina: 15.0%</li>
+                                    <li>Otros: 10.0%</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TERCERA FILA LLEVARA DOS TARJETAS-->
+            <div class="row g-3 mt-3">
+                <!-- VENTAS POR MES-->
+                <div class="col-md-7">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Ventas por Mes</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="chart-container"
+                                style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+                                <canvas id="migrafica3" style="width: 100%; height: 100%;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VENTAS POR PRODUCTOS EN UNIDADES -->
+                <div class="col-md-5">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Ventas por Producto en Unidades</h5>
+                        </div>
+                        <div class="card-body p-0" style="display: flex; flex-direction: column; height: 100%;">
+                            <!-- CONTENEDOR DE LA TABLA-->
+                            <div class="table-responsive" style="flex: 1; overflow: visible;">
+                                <table style="width: 100%; height: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Unidades</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Arroz</td>
+                                            <td>300</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aceite</td>
+                                            <td>250</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Azúcar</td>
+                                            <td>200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Harina</td>
+                                            <td>150</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mayonesa</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Leche</td>
+                                            <td>50</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/components/grafica-ventas-diarias.js"></script>
+    <script src="../js/components/grafica-procentaje-ventas.js"></script>
+    <script src="../js/components/grafica-ventas-mensuales.js"></script>
+    <!-- <script src="ventana.js"></script> -->
+</body>
+
+</html>

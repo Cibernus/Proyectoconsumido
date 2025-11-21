@@ -1,0 +1,398 @@
+body {
+    background-color: #F8FAFC !important;
+    font-family: Arial, sans-serif;
+}
+
+.titulo_de_la_pagina {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo_de_la_pagina h2 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.busqueda {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.busqueda input {
+    height: 40px;
+    padding: 10 10px;
+    padding-left: 35px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    flex: 0 0 200px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 10px;
+    color: #727A87;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.busqueda input:focus {
+    border-color: #727A87;
+    outline: none;
+}
+
+.busqueda input::placeholder {
+    text-align: left;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+.usuario {
+    /* ESTILO SOLO A USUARIO */
+    background-color: #F8FAFC;
+    border-radius: 50%;
+}
+
+main {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 1rem;
+}
+
+.tabla_entradas_y_salidas {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+
+table {
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 100%;
+}
+
+thead {
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: thin solid gainsboro;
+}
+
+.primer_apartado {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Selectores más específicos para que le agreguemos bostrap y asi no choquen mis estilos con los mios */
+.primer_apartado section .nav2 ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.primer_apartado section .nav2 ul li {
+    list-style-type: none;
+    margin: 0;
+}
+
+.primer_apartado section .nav2 ul li a {
+    text-decoration: none;
+    color: #000000;
+    margin-left: 30px;
+    padding: 0;
+    display: inline-block;
+    border: none;
+    background: none;
+}
+
+.primer_apartado section .nav2 ul li a:hover {
+    text-decoration: none;
+    color: #4299FF;
+    margin-left: 30px;
+    border-bottom: medium solid;
+    background: none;
+}
+
+.primer_apartado section .nav2 ul li a.activo {
+    text-decoration: none;
+    color: #4299FF;
+    margin-left: 30px;
+    border-bottom: medium solid;
+    background: none;
+}
+
+.dropdown {
+    position: relative;
+    /* PARA QUE TOMEN COMO REFERENCIA A ESTE*/
+    display: inline-block;
+    /* Hace QUE SE ALINE CON OTROS ELEMENTOS*/
+}
+
+.btn {
+    padding: 4px 16px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 16px !important;
+    border: none !important;
+    background-color: white !important;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.bx-bell {
+    font-size: 25px;
+}
+
+.bx-user {
+    font-size: 25px;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    /* Ocultar el menú por defecto */
+    position: absolute;
+    /* PARA QUE SE POSICIONE ABAJO DEL ELEMENTO ANTERIOR*/
+    top: 100%;
+    /* Lo posicionamos debajo del botón */
+    right: 0;
+    /* ESTE ES PA QUE EMPIEZE DESDE LA DERECHA*/
+    background-color: white;
+    white-space: nowrap;
+    /* ESTE ES PARA QUE NO SE SALTE DE LINEA EL TEXTO */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    list-style: none;
+    padding: 8px 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+/* ESTILOS PARA EL MENU DESPLEGABLE(AMBOS)*/
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 4px 16px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4299FF;
+    color: white;
+}
+
+.dropdown-menu li .notification-item:hover {
+    background-color: white;
+    color: #000000;
+}
+
+/* APARTE DE AGREGAR ESTAS LINEAS HACER ESTAS COSAS : EN SECTION BORRAR EL GAP
+   ADEMAS BORRAR TODO ESTILO DE .titulo_de_la_pagina section i -, ADEMAS NO GENERALIZAR LOS BOTONES ES DECIR
+   NO APLICAR ESTILOS AL ELEMENTO BOTON SINO MEJOR APLICAR ESTILOS OCUPANDO SU ID #descargarExcel  */
+
+
+/* ESTILOS PARA LAS TARJETAS */
+.dashboard-card {
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.dashboard-card:hover {
+    transform: scale(1.09);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ESTILOS PARA LOS HEADERS DE LAS TARJETAS */
+.card-header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e9ecef;
+    /* Opcional: agregar un borde sutil */
+}
+
+.card-title {
+    color: #000000;
+    /* Asegurar que el texto sea visible */
+    font-weight: 600;
+}
+
+
+
+
+/* ========== ESTILOS PARA TODAS LAS CARDS ========== */
+
+/* Estilo general de las cards - quitar bordes y agregar sombra */
+.card {
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+/* Cards del dashboard con efecto hover */
+.dashboard-card {
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.dashboard-card:hover {
+    transform: scale(1.09);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Header de las cards - fondo blanco sin bordes */
+.card-header {
+    background-color: #ffffff !important;
+    border: none !important;
+    border-bottom: none !important;
+    padding: 1rem !important;
+}
+
+.card-title {
+    color: #000000 !important;
+    font-weight: 600 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Body de las cards - sin bordes */
+.card-body {
+    border: none !important;
+    background-color: #ffffff !important;
+}
+
+/* ========== ESTILOS PARA TABLAS DENTRO DE LAS CARDS ========== */
+
+/* Tabla general - fondo blanco sin bordes superiores */
+.card .table {
+    border: none !important;
+    margin-bottom: 0 !important;
+}
+
+.card .table thead {
+    background-color: #ffffff !important;
+    border: none !important;
+}
+
+.card .table thead th {
+    background-color: #ffffff !important;
+    border-top: none !important;
+    border-bottom: 1px solid #e9ecef !important;
+}
+
+/* Quitar efecto striped - todas las filas blancas */
+.card .table tbody tr {
+    background-color: #ffffff !important;
+    border: none !important;
+}
+
+.card .table tbody tr:nth-of-type(odd) {
+    background-color: #ffffff !important;
+}
+
+.card .table tbody tr:nth-of-type(even) {
+    background-color: #ffffff !important;
+}
+
+.card .table tbody td {
+    border-top: 1px solid #e9ecef !important;
+    border-bottom: none !important;
+}
+
+/* Quitar bordes de la tabla striped específicamente */
+.card .table-striped tbody tr {
+    background-color: #ffffff !important;
+    border: none !important;
+}
+
+.card .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #ffffff !important;
+}
+
+.card .table-striped tbody tr:nth-of-type(even) {
+    background-color: #ffffff !important;
+}
+
+
+
+
+
+/* ========== SOBRESCRIBIR BOOTSTRAP COMPLETAMENTE ========== */
+
+/* Resetear listas de Bootstrap */
+.barra-lateral ul,
+.barra-lateral .enlaces-menu {
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
+    list-style: none !important;
+}
+
+.barra-lateral li,
+.barra-lateral .enlace-nav {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Forzar display flex en los enlaces */
+.barra-lateral li a,
+.barra-lateral .enlace-nav a {
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Proteger iconos de Boxicons */
+.barra-lateral i[class^="bx"],
+.barra-lateral .icon {
+    display: inline-block !important;
+    font-family: 'boxicons' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    line-height: 1 !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+/* Asegurar que el texto se vea */
+.barra-lateral .texto,
+.barra-lateral .nav-text {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}

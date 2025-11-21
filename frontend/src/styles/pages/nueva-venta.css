@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8FAFC;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    margin-left: 250px;
+    padding: 1rem;
+    width: calc(100% - 250px);
+}
+
+.titulo-principal {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.titulo-principal i {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.usuario {
+    background-color: #F8FAFC;
+    border-radius: 50%;
+}
+
+.primer-apartado {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.busqueda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.busqueda input {
+    height: 40px;
+    padding: 10 10px;
+    padding-left: 35px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    flex: 0 0 200px;
+    text-align: left;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #727A87;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.busqueda input:focus {
+    border-color: #727A87;
+    outline: none;
+}
+
+.busqueda input::placeholder {
+    text-align: left;
+    margin-left: -10;
+}
+
+
+button {
+    font-size: 12px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.escanear {
+    background-color: #4299FF;
+    color: #ffffff;
+    border: none;
+}
+
+.escanear i {
+    margin-right: 5px;
+}
+
+#Titulo {
+    background-color: #FFFFFF;
+    width: 80%;
+    height: 65px;
+    margin-left: 17.5%;
+}
+
+#campana {
+    position: absolute;
+    margin-left: 75%;
+    margin-top: -25px;
+    font-size: 20px;
+}
+
+#Usuario {
+    margin-top: -36px;
+    margin-left: 88%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 24px;
+}
+
+#Escaneador {
+    margin-left: 18%;
+    background-color: #FFFFFF;
+    margin-top: 40px;
+    height: 67px;
+    width: 81%;
+    margin-top: 14px;
+    border-radius: 4px;
+}
+
+h2 {
+    margin-left: 29px;
+}
+
+input {
+    margin-top: 17px;
+    margin-left: 4%;
+    width: 28%;
+    height: 35px;
+    border-radius: 7px;
+}
+
+#codigo {
+    margin-left: 55%;
+    height: 35px;
+    width: 10%;
+    border-radius: 8px;
+    background-color: #4299FF;
+    color: #FFFFFF;
+}
+
+.contenido-tabla {
+    background-color: #ffffff;
+    border: none;
+    margin-left: 19%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border-top: none;
+    overflow: hidden;
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    width: 60%;
+    height: 580px;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+#mitabla {
+    border: none;
+    width: 100px;
+    height: 580px;
+}
+
+thead {
+    border-top: none;
+    border-bottom: thin solid gainsboro;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: thin solid gainsboro;
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+}
+
+.ventas th,
+.ventas td {
+    border-bottom: none;
+}
+
+.ventas {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-left: 80%;
+    margin-top: -609px;
+    height: 597px;
+    width: 19%;
+    border-bottom: none;
+}
+
+.bote {
+    color: red;
+    font-size: 20px;
+}
+
+td .bote {
+    align-items: center;
+}
+
+.td {
+    text-align: left;
+    border: none;
+}
+
+.th {
+    text-align: left;
+    border: none;
+}
+
+#Confirmar {
+    background-color: #4299FF;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 25px;
+
+}
+
+#Cancelar {
+    background-color: red;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 25px;
+    margin-top: 30px;
+}
+
+#tabla {
+    margin-top: 30px;
+    height: 366px;
+    border: none;
+    width: 35%;
+}
+
+.th {
+    border: none;
+}
+
+.contenido-tabla {
+    background-color: #ffffff;
+    border: none;
+    margin-left: 19%;
+    margin-right: 19%;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hacer que la tabla sea responsiva */
+#mitabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#mitabla th,
+#mitabla td {
+    padding: 11px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+
+td .boton {
+    border-radius: none;
+}
+
+.menor-btn {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #E2E8F0;
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.mas-btn {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #E2E8F0;
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+
+.btn-editar,
+.btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+
+
+.btn-editar {
+    color: #4299FF;
+}
+
+.btn-eliminar {
+    color: #dc3545;
+}
+
+
+.btn-editar:hover,
+.btn-eliminar:hover {
+    opacity: 0.7;
+}
+
+
+.input-efectivo {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.input-efectivo input:focus {
+    border-color: #727a87;
+    outline: none;
+}
+
+.input-efectivo label {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.input-efectivo input {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: right;
+}
+
+#tabla {
+    border: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .contenido-tabla {
+        overflow-x: auto;
+        display: block;
+    }
+
+    #mitabla {
+        min-width: 600px;
+    }
+
+    /* Ajusta el tamaño de la fuente en la tabla */
+    #mitabla th,
+    #mitabla td {
+        font-size: 14px;
+    }
+}
+
+/*------------------------------------ ESTILOS DEL MENU DESPLEGABLE---------------------------------*/
+.dropdown {
+    position: relative;
+    /* PARA QUE TOMEN COMO REFERENCIA A ESTE*/
+    display: inline-block;
+    /* Hace QUE SE ALINE CON OTROS ELEMENTOS*/
+}
+
+.btn {
+    padding: 4px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.dropdown-toggle {
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.bx-bell {
+    font-size: 25px;
+}
+
+.bx-user {
+    font-size: 25px;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown-menu {
+    display: none;
+    /* Ocultar el menú por defecto */
+    position: absolute;
+    /* PARA QUE SE POSICIONE ABAJO DEL ELEMENTO ANTERIOR*/
+    top: 100%;
+    /* Lo posicionamos debajo del botón */
+    right: 0;
+    /* ESTE ES PA QUE EMPIEZE DESDE LA DERECHA*/
+    background-color: white;
+    white-space: nowrap;
+    /* ESTE ES PARA QUE NO SE SALTE DE LINEA EL TEXTO */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    list-style: none;
+    padding: 8px 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+
+/* ESTILOS PARA EL MENU DESPLEGABLE(AMBOS)*/
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 4px 16px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4299FF;
+    color: white;
+}
+
+.dropdown-menu li .notification-item:hover {
+    background-color: white;
+    color: #000000;
+}
+
+/* APARTE DE AGREGAR ESTAS LINEAS HACER ESTAS COSAS : EN SECTION BORRAR EL GAP
+   ADEMAS BORRAR TODO ESTILO DE .titulo_de_la_pagina section i -, ADEMAS NO GENERALIZAR LOS BOTONES ES DECIR
+   NO APLICAR ESTILOS AL ELEMENTO BOTON SINO MEJOR APLICAR ESTILOS OCUPANDO SU ID #descargarExcel  */
